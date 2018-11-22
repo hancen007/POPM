@@ -23,15 +23,15 @@ class TestparkVisitorlist():
 
         print(result)
 
-    def test_car_save(self,):
+    def test_car_save(self,Login):
         """新增停车信息"""
 
-        P = parkVistorlist()
+        P = parkVistorlist(Login)
 
         re = P.save()
 
 
-    def test_car_del(self,):
+    def test_car_del(self,Login):
         """删除停车信息"""
 
         P = parkVistorlist()
