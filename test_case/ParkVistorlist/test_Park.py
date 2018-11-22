@@ -13,7 +13,6 @@ from common.utils import YmlUtils
 from Api.parkVisitorlist import parkVistorlist
 
 
-
 class TestparkVisitorlist():
     """车辆模块"""
     def test_car_getParklist(self,Login):
