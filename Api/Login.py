@@ -4,37 +4,55 @@
 # @Date  : 2018/11/16
 # @Desc  :
 
+from common.Req import Req
+from Config.Config import Config
+from urllib.parse import urljoin
+from collections import OrderedDict
+import allure
+
 import requests
 
 import json
 
-S = requests.Session()
+class Login():
 
-headers ={
-    "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-}
-seccode = "http://47.106.221.58:5002/mgr/normal/authz/seccode.do"
+    def __init__(self):
 
-re = S.get(seccode)
+        self.conf = Config()
+        self.host = self.conf.host
 
-verify_seccode = "http://47.106.221.58:5002/mgr/normal/authz/verify_seccode.do"
+        self.Seesion = requests.Session()
 
-data = {"seccode": 9999}
+    def login(self):
 
-re = S.post(verify_seccode,data=data)
+        seccode = urljoin(self.host,"/mgr/normal/authz/seccode.do")
 
-print(re.text)
+        verify_seccode = urljoin(self.host,"/mgr/normal/authz/verify_seccode.do")
+
+        url = urljoin(self.host,"/mgr/normal/ajax/login.do")
 
 
-url = "http://47.106.221.58:5002/mgr/normal/ajax/login.do"
+        headers ={
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        }
+        re = self.Seesion.get(seccode)
 
-data = {
-    "username": "autotest",
-    "password": "123456",
-    "seccode": 9999
-}
+        data = {"seccode": 9999}
 
-re =S.post(url,data,headers=headers)
+        re = self.Seesion.post(verify_seccode,data=data)
 
-print(re.text)
+        data = {
+            "username": "autotest",
+            "password": "123456",
+            "seccode": 9999
+        }
+        re = self.Seesion.post(url,data,headers=headers)
+        print(re.json())
+        return self.Seesion
 
+
+if __name__ == "__main__":
+
+    L = Login()
+
+    L.login()

@@ -5,11 +5,23 @@
 # @Desc  :
 
 from common.Req import Req
+from Api.Login import Login
 import pytest
 
 import requests
 
+@pytest.fixture(scope="class")
+def userLogin():
 
+    L = Login()
+
+    Session = L.login()
+
+    return Req(Session)
+
+
+
+"""
 
 @pytest.fixture(scope="class")
 def Login():
@@ -42,7 +54,9 @@ def Login():
 
     return Req(S)
 
+"""
+
 
 if __name__ == "__main__":
 
-    sysLogin()
+    SYS()
