@@ -67,7 +67,7 @@ class Req(requests.Session):
         """
         #response = requests.Session.request(self, method, url, **kwargs)
         response = self.Session.request(method, url, **kwargs)
-        logger.info("请求接口{}".format(response.url))
+        logger.info("请求接口{}".format("Request Method: "+method+"Request URL: "+url))
         logger.info("请求数据{}".format(kwargs))
         logger.info("请求结果{}".format(response.text))
         return response
