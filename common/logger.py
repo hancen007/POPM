@@ -7,6 +7,16 @@ import configparser
 import time
 
 class LogSignleton(object):
+    """
+    CRITICAL = 50
+    FATAL = CRITICAL
+    ERROR = 40
+    WARNING = 30
+    WARN = WARNING
+    INFO = 20
+    DEBUG = 10
+    NOTSET = 0
+    """
     def __init__(self, log_config):
         pass
 

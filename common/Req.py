@@ -67,10 +67,10 @@ class Req(requests.Session):
         """
         #response = requests.Session.request(self, method, url, **kwargs)
         response = self.Session.request(method, url, **kwargs)
-        logger.info("Request Method:{}".format(method))
-        logger.info("Request URL:{}".format(url))
-        logger.info("Request Payload:{}".format(kwargs))
-        logger.info("Response Data :{}".format(response.text))
+        logger.debug("Request Method:{}".format(method))
+        logger.debug("Request URL:{}".format(url))
+        logger.debug("Request Payload:{}".format(kwargs))
+        logger.debug("Response Data :{}".format(response.text))
         return response
 
     def get(self, url, **kwargs):

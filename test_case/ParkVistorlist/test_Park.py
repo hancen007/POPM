@@ -21,8 +21,6 @@ class TestparkVisitorlist():
 
         result = P.getParklist("CY009")
 
-        print(result)
-
     def test_car_save(self,Login):
         """新增停车信息"""
 
