@@ -1,5 +1,5 @@
 
-from Api.Req import Req
+from common.Req import Req
 from urllib.parse import urljoin
 
 

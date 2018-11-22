@@ -8,6 +8,7 @@ import pytest,os
 import allure
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 root_path = os.path.abspath(os.path.join(BASE_DIR, "../.."))
+
 from common.utils import YmlUtils
 from Api.parkVisitorlist import parkVistorlist
 

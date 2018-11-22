@@ -22,7 +22,7 @@ import pytest
 
 from common.Shell import Shell
 
-test_dir = "."
+test_dir = ""
 
 if __name__ == "__main__":
 

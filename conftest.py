@@ -4,10 +4,8 @@
 # @Date  : 2018/11/22
 # @Desc  :
 
-
 from common.Req import Req
 import pytest
-
 
 import requests
 

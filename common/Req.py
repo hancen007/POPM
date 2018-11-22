@@ -58,7 +58,6 @@ class Req(requests.Session):
             :type timeout: float or tuple
         :param allow_redirects: (optional)
             Set to True by default.
-        :type allow_redirects: bool
         :param proxies: (optional)
             Dictionary mapping protocol to the URL of the proxy.
         :param stream: (optional)
