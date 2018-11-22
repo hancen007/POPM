@@ -8,7 +8,10 @@
 from common.Req import Req
 from urllib.parse import urljoin
 from collections import OrderedDict
+import allure
 
+
+@allure.feature("访客车辆模块")
 class parkVistorlist(Req):
     """访客车辆"""
     """
@@ -18,6 +21,7 @@ class parkVistorlist(Req):
         self.del_url = urljoin(self.host,"/mgr/park/parkVisitorlist/del.do")
         self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
     """
+    @allure.story("查询车辆信息")
     def getParklist(self,carNum):
 
         self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
@@ -40,7 +44,7 @@ class parkVistorlist(Req):
 
         return re
 
-
+    @allure.story("新建或者修改车辆信息")
     def save(self):
         """新建或者修改车辆信息"""
         hearders = {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
@@ -63,7 +67,7 @@ class parkVistorlist(Req):
         re = self.post(self.save_url,data=form_data,hearders=hearders)
         return re
 
-
+    @allure.story("删除车辆信息")
     def car_del(self):
         """删除车辆信息"""
 
