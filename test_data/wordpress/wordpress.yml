@@ -1,0 +1,21 @@
+- test:
+    name: wordpress
+    desc: 搜索-融资
+    send_data:
+      keyword: 融资
+    except:
+      id: 38
+- test:
+    name: wordpress
+    desc: 搜索-融资
+    send_data:
+      keyword: 融资
+    except:
+      id: 38
+- test:
+    name: wordpress
+    desc: 搜索-融资
+    send_data:
+      keyword: 融资
+    except:
+      id: 38

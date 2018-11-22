@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="3" name="pytest" skips="0" tests="11" time="0.853"><testcase classname="test_case.wordpress.test_wordpress.TestWordpress" file="test_case\wordpress\test_wordpress.py" line="22" name="test_getlist[搜索-融资]" time="0.23099851608276367"></testcase><testcase classname="test_suite.M_B2C.test_M_B2C.Test_M_B2C_smoke" file="test_suite\M_B2C\test_M_B2C.py" line="13" name="test_login" time="0.0030133724212646484"></testcase><testcase classname="test_suite.M_B2C.test_M_B2C.Test_M_B2C_smoke" file="test_suite\M_B2C\test_M_B2C.py" line="16" name="test_modification" time="0.0009982585906982422"><failure message="assert 0">self = &lt;test_M_B2C.Test_M_B2C_smoke object at 0x0000019D9F870320&gt;
+
+    def test_modification(self):
+&gt;       assert 0
+E       assert 0
+
+test_suite\M_B2C\test_M_B2C.py:18: AssertionError</failure></testcase><testcase classname="test_suite.M_B2C.test_M_B2C.Test_M_B2C_smoke" file="test_suite\M_B2C\test_M_B2C.py" line="19" name="test_deletion" time="0.0"></testcase><testcase classname="test_suite.smoke_testing.test_B2C.Test_B2C_smoke" file="test_suite\smoke_testing\test_B2C.py" line="12" name="test_login" time="0.0019998550415039062"></testcase><testcase classname="test_suite.smoke_testing.test_B2C.Test_B2C_smoke" file="test_suite\smoke_testing\test_B2C.py" line="15" name="test_modification" time="0.0009996891021728516"><failure message="assert 0">self = &lt;test_B2C.Test_B2C_smoke object at 0x0000019D9F8ACCF8&gt;
+
+    def test_modification(self):
+&gt;       assert 0
+E       assert 0
+
+test_suite\smoke_testing\test_B2C.py:17: AssertionError</failure></testcase><testcase classname="test_suite.smoke_testing.test_B2C.Test_B2C_smoke" file="test_suite\smoke_testing\test_B2C.py" line="18" name="test_deletion" time="0.0"></testcase><testcase classname="test_suite.smoke_testing.test_smoke.TestUserHandling_smoke" file="test_suite\smoke_testing\test_smoke.py" line="12" name="test_login" time="0.0009987354278564453"></testcase><testcase classname="test_suite.smoke_testing.test_smoke.TestUserHandling_smoke" file="test_suite\smoke_testing\test_smoke.py" line="14" name="test_modification" time="0.0019745826721191406"><failure message="assert 0">self = &lt;test_smoke.TestUserHandling_smoke object at 0x0000019D9F8B0278&gt;
+
+    def test_modification(self):
+&gt;       assert 0
+E       assert 0
+
+test_suite\smoke_testing\test_smoke.py:16: AssertionError</failure></testcase><testcase classname="test_suite.smoke_testing.test_smoke.TestUserHandling_smoke" file="test_suite\smoke_testing\test_smoke.py" line="17" name="test_deletion" time="0.0010268688201904297"></testcase><testcase classname="test_suite.smoke_testing.test_smoke" file="test_suite\smoke_testing\test_smoke.py" line="20" name="test_normal" time="0.0"></testcase></testsuite>

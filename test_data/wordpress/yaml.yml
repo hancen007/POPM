@@ -1,0 +1,6 @@
+test: "my yaml file"
+persons:
+  - name: "Jack"
+    age: 20
+  - name: "John"
+    age: 30
