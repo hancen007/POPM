@@ -15,26 +15,25 @@ from Api.parkVisitorlist import parkVistorlist
 
 class TestparkVisitorlist():
     """车辆模块"""
-    def test_car_getParklist(self):
+    def test_car_getParklist(self,Login):
         """验证关键字查询"""
-        P = parkVistorlist()
+        P = parkVistorlist(Login)
 
         result = P.getParklist("CY009")
 
         print(result)
 
-
-    def test_car_save(self,sysLogin):
+    def test_car_save(self,):
         """新增停车信息"""
 
-        P = parkVistorlist(sysLogin)
+        P = parkVistorlist()
 
         re = P.save()
 
 
-    def test_car_del(self,sysLogin):
+    def test_car_del(self,):
         """删除停车信息"""
 
-        P = parkVistorlist(sysLogin)
+        P = parkVistorlist()
 
         re = P.delete()

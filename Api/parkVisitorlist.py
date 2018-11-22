@@ -11,14 +11,17 @@ from collections import OrderedDict
 
 class parkVistorlist(Req):
     """访客车辆"""
-
-    def __init__(self,):
-        super(parkVistorlist,self).__init__()
+    """
+    def __init__(self):
+        super(parkVistorlist,self).__init__(*args,**kwargs)
         self.save_url = urljoin(self.host, "/mgr/park/parkVisitorlist/save.do")
         self.del_url = urljoin(self.host,"/mgr/park/parkVisitorlist/del.do")
         self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
-
+    """
     def getParklist(self,carNum):
+
+        self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
+
         """
         查询车辆信息
         :param carNum: 车牌号码
@@ -63,6 +66,9 @@ class parkVistorlist(Req):
 
     def car_del(self):
         """删除车辆信息"""
+
+        self.del_url = urljoin(self.host,"/mgr/park/parkVisitorlist/del.do")
+
         hearders = {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
 
         form_data ={

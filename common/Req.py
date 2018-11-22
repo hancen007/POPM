@@ -17,10 +17,16 @@ class Req(requests.Session):
     http请求的基础类
     """
 
-    def __init__(self):
+    def __init__(self,Session=None):
         super(Req, self).__init__()
+
         self.conf = Config()
         self.host = self.conf.host
+        if Session == None:
+            self.Session = requests.Session()
+        else:
+            self.Session = Session
+
 
 
     def request(self, method, url, name=None, **kwargs):
@@ -62,7 +68,8 @@ class Req(requests.Session):
         :param cert: (optional)
             if String, path to ssl client cert file (.pem). If Tuple, ('cert', 'key') pair.
         """
-        response = requests.Session.request(self, method, url, **kwargs)
+        #response = requests.Session.request(self, method, url, **kwargs)
+        response = self.Session.request(method, url, **kwargs)
         logger.info("请求接口{}".format(response.url))
         logger.info("请求数据{}".format(self.params))
         logger.info("请求结果{}".format(response.text))
@@ -75,7 +82,6 @@ class Req(requests.Session):
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
         """
-
         kwargs.setdefault('allow_redirects', True)
         return self.request('GET', url, **kwargs)
 

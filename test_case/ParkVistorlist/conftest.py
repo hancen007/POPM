@@ -9,14 +9,14 @@ from common.Req import Req
 import pytest
 
 
-
+import requests
 
 
 
 @pytest.fixture(scope="class")
-def sysLogin():
+def Login():
 
-    S = Req()
+    S = requests.Session()
 
     headers ={"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
 
@@ -40,9 +40,9 @@ def sysLogin():
     "password": "123456",
     "seccode": 9999}
 
-    re =S.post(url,data,headers=headers)
+    re = S.post(url,data,headers=headers)
 
-    return S
+    return Req(S)
 
 
 if __name__ == "__main__":
