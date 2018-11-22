@@ -47,6 +47,8 @@ class parkVistorlist(Req):
     @allure.story("新建或者修改车辆信息")
     def save(self):
         """新建或者修改车辆信息"""
+
+        self.save_url = urljoin(self.host, "/mgr/park/parkVisitorlist/save.do")
         hearders = {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
 
         form_data ={
