@@ -12,6 +12,9 @@ from Config.Config import Config
 
 from common.logger import logger
 
+from urllib.parse import urljoin
+
+
 class Req(requests.Session):
     """
     http请求的基础类
@@ -26,6 +29,16 @@ class Req(requests.Session):
             self.Session = requests.Session()
         else:
             self.Session = Session
+
+
+    def _api(self,url):
+        """host + api_url"""
+        full_url = urljoin(self.host,url)
+        return full_url
+    @property
+    def api(self):
+        """调用接口地址"""
+        return self._api(self.url)
 
     def request(self, method, url, name=None, **kwargs):
         """

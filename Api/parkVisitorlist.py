@@ -21,10 +21,10 @@ class parkVistorlist(Req):
         self.del_url = urljoin(self.host,"/mgr/park/parkVisitorlist/del.do")
         self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
     """
+
+
     @allure.story("查询车辆信息")
     def getParklist(self,carNum):
-
-        self.Visitorlist_url = urljoin(self.host,"/mgr/park/parkVisitorlist/getParkVisitorlist.do")
 
         """
         查询车辆信息
@@ -32,22 +32,19 @@ class parkVistorlist(Req):
         :return:
 
         """
+        self.url = "/mgr/park/parkVisitorlist/getParkVisitorlist.do"
+
         from_data = OrderedDict()
-
         from_data["page"] = 1
-
         from_data[""] = 10
-
         from_data["carLicenseNumber"] = carNum
-
-        re = self.get(self.Visitorlist_url,json=from_data)
-
+        re = self.get(self.api,json=from_data)
         return re
 
     @allure.story("新建或者修改车辆信息")
     def save(self):
         """新建或者修改车辆信息"""
-
+        self.url = urljoin(self.host, "/mgr/park/parkVisitorlist/save.do")
 
         hearders = {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
 
@@ -66,23 +63,20 @@ class parkVistorlist(Req):
             "visitTo": "2018-11-23 00:00:00"
         }
 
-        re = self.post(self.save_url,data=form_data,hearders=hearders)
+        re = self.post(self.api,data=form_data,hearders=hearders)
         return re
 
     @allure.story("删除车辆信息")
     def car_del(self):
         """删除车辆信息"""
 
-        self.del_url = urljoin(self.host,"/mgr/park/parkVisitorlist/del.do")
+        self.url = "/mgr/park/parkVisitorlist/del.do"
 
         hearders = {"Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"}
 
-        form_data ={
+        form_data ={"parkVisitorlistId": 146}
 
-            "parkVisitorlistId": 146
-        }
-
-        re = self.post(self.del_url,data=form_data,hearders=hearders)
+        re = self.post(self.api,data=form_data,hearders=hearders)
         return re
 
 

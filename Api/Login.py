@@ -20,7 +20,6 @@ class Login():
 
         self.conf = Config()
         self.host = self.conf.host
-
         self.Seesion = requests.Session()
 
     def login(self):
