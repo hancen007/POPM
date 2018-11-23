@@ -12,11 +12,8 @@ import requests
 
 @pytest.fixture(scope="class")
 def userLogin():
-
     L = Login()
-
     Session = L.login()
-
     return Req(Session)
 
 

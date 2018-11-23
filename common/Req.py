@@ -30,15 +30,19 @@ class Req(requests.Session):
         else:
             self.Session = Session
 
-
     def _api(self,url):
         """host + api_url"""
         full_url = urljoin(self.host,url)
         return full_url
+
     @property
     def api(self):
         """调用接口地址"""
         return self._api(self.url)
+
+    @property
+    def api_headers(self):
+        return self.api_headers
 
     def request(self, method, url, name=None, **kwargs):
         """
