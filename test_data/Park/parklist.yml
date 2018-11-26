@@ -1,0 +1,25 @@
+- test:
+    name: case_01
+    desc: 搜索-01
+    send_data:
+      carLicenseNumber: CY009
+    except:
+      status: 1
+      resultCode: 0
+
+- test:
+    name: case_02
+    desc: 搜索-02
+    send_data:
+      carLicenseNumber: CY009
+    except:
+      status: 1
+      resultCode: 0
+- test:
+    name: case_03
+    desc: 搜索-03
+    send_data:
+      carLicenseNumber: CY009
+    except:
+      status: 1
+      resultCode: 0

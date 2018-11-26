@@ -13,8 +13,7 @@ class YmlUtils(object):
     def __init__(self,yamlPath):
 
         self.C = Config()
-        self.all_data = []
-        self.load_file = self.getData(yamlPath)
+        self.all_data = self.load_yaml(yamlPath)
 
     def load_yaml(self,yamlPath):
 
@@ -26,7 +25,7 @@ class YmlUtils(object):
         self.all_data = yaml.load(cfg)  # 用load方法转字典
 
         return self.all_data
-
+    @property
     def format_data(self):
         d = self.all_data
         item = []
@@ -40,10 +39,10 @@ class YmlUtils(object):
         return item
 
 
+    @property
+    def getData(self):
 
-    def getData(self,yamlPath):
-
-        d = self.load_yaml(yamlPath)
+        d = self.all_data
         array=[]  # 每条案例对应的测试数据信息
         desc=[]   # 每条案例对应的描述信息
         for i in range(0,len(d)):

@@ -71,7 +71,6 @@ class parkVistorlist(Req):
 
         self.url = "/mgr/park/parkVisitorlist/del.do"
 
-
         form_data ={"parkVisitorlistId": 146}
 
         re = self.post(self.api,data=form_data,headers=self.api_headers)

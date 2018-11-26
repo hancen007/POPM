@@ -4,8 +4,7 @@
 # @Date  : 2018/11/16
 # @Desc  :
 
-import pytest,os
-import allure
+import os
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 root_path = os.path.abspath(os.path.join(BASE_DIR, "../.."))
 
