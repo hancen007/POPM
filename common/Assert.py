@@ -7,14 +7,14 @@
 封装Assert方法
 
 """
-from common import Log
+from common.logger import logger
 from common import Consts
 import json
 
 
 class Assertions:
     def __init__(self):
-        self.log = Log.MyLog()
+        self.log = logger
 
     def assert_code(self, code, expected_code):
         """

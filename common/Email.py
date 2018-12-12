@@ -15,7 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from common import Consts
-from common import Log
+from common.logger import logger
 from Conf.Config import Config
 
 
@@ -23,7 +23,7 @@ class SendMail:
 
     def __init__(self):
         self.config = Config()
-        self.log = Log.MyLog()
+        self.log = logger
 
     def sendMail(self):
         msg = MIMEMultipart()
