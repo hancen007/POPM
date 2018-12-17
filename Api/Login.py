@@ -30,7 +30,6 @@ class Login():
 
         url = urljoin(self.host,"/mgr/normal/ajax/login.do")
 
-
         headers ={
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
         }
